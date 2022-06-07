@@ -1,4 +1,4 @@
-export interface CardProp {
+export interface Restaurant {
   title: string;
   img: string;
   description: string;
