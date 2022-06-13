@@ -1,6 +1,8 @@
 .container {
   padding: 10px 10px 10px 10px;
 
+  background-color: white;
+
   border: 1px;
   border-style: solid;
   border-color: black;

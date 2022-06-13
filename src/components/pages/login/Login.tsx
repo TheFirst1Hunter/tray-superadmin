@@ -4,13 +4,13 @@ import { useRecoilState } from "recoil";
 import "./style.css";
 import { login } from "./helpers";
 import { errorState } from "../../error/atom";
-import { useToken } from "../../../utils";
+import { token } from "../../../utils";
 
 function Login() {
   const [phoneNumber, setPhoneNumber] = useState<string>("0");
   const [password, setPassword] = useState<string>("0");
   const [error, setError] = useRecoilState<string>(errorState);
-  const { setAccessToken, setRefreshToken } = useToken();
+  const { setAccessToken, setRefreshToken } = token();
 
   const onClick = async () => {
     try {
@@ -18,6 +18,8 @@ function Login() {
 
       setAccessToken(result.tokens.access);
       setRefreshToken(result.tokens.refresh);
+
+      window.location.reload();
     } catch (err: any) {
       setError(err.response.data.detail);
     }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { RecoilRoot } from "recoil";
 import { Grid, Box, ThemeProvider } from "@mui/material";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -6,10 +6,14 @@ import { NavBar, ErrorHandler } from "./components";
 import Restaurants from "./components/pages/restaurants";
 import RestaurantModal from "./components/pages/restaurantModal/RestaurantModal";
 import Login from "./components/pages/login";
-import { theme } from "./utils/theme";
+import { theme, token } from "./utils";
 
 function App() {
-  const loggedIn = false;
+  const { getAccessToken, getRefreshToken } = token();
+
+  console.log(getRefreshToken());
+
+  const loggedIn = getAccessToken() !== null;
   return (
     <>
       <RecoilRoot>
@@ -28,45 +32,10 @@ function App() {
                       <Route
                         path="/"
                         element={
-                          <Login />
-
-                          // <>
-                          //   <RestaurantModal />
-                          //   <Restaurants
-                          //     restaurants={[
-                          //       {
-                          //         id: "1",
-                          //         name: "f",
-                          //         description: "Ffe",
-                          //         img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%3Fid%3DOIP.YYi9Wm-SiOrunvCAf2IXXQHaHa%26pid%3DApi&f=1",
-                          //       },
-                          //       {
-                          //         id: "2",
-                          //         name: "fd",
-                          //         description: "Fddfe",
-                          //         img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%3Fid%3DOIP.YYi9Wm-SiOrunvCAf2IXXQHaHa%26pid%3DApi&f=1",
-                          //       },
-                          //       {
-                          //         id: "2",
-                          //         name: "fd",
-                          //         description: "Fddfe",
-                          //         img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%3Fid%3DOIP.YYi9Wm-SiOrunvCAf2IXXQHaHa%26pid%3DApi&f=1",
-                          //       },
-                          //       {
-                          //         id: "2",
-                          //         name: "fd",
-                          //         description: "Fddfe",
-                          //         img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%3Fid%3DOIP.YYi9Wm-SiOrunvCAf2IXXQHaHa%26pid%3DApi&f=1",
-                          //       },
-                          //       {
-                          //         id: "2",
-                          //         name: "fd",
-                          //         description: "Fddfe",
-                          //         img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%3Fid%3DOIP.YYi9Wm-SiOrunvCAf2IXXQHaHa%26pid%3DApi&f=1",
-                          //       },
-                          //     ]}
-                          //   ></Restaurants>
-                          // </>
+                          <>
+                            <RestaurantModal />
+                            <Restaurants />
+                          </>
                         }
                       ></Route>
                     </Routes>

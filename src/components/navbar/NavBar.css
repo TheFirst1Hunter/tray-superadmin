@@ -2,6 +2,15 @@
   /* position: fixed; */
   height: 100vh;
   width: 100%;
-  background-color: aqua;
+  background-color: #ff0000;
   overflow: auto;
+
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 0px 30px 30px 0px;
+
+  z-index: 1000;
+
+  padding: 10px;
 }

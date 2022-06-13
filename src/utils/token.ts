@@ -10,11 +10,11 @@ export default function useToken() {
   };
 
   const saveAccessToken = (userToken: string) => {
-    localStorage.setItem("token-access", userToken);
+    localStorage.setItem("access-token", userToken);
   };
 
   const saveRefreshToken = (userToken: string) => {
-    localStorage.setItem("token-refresh", userToken);
+    localStorage.setItem("refresh-token", userToken);
   };
 
   return {

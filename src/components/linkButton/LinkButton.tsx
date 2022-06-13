@@ -8,13 +8,14 @@ function LinkButton(props: LinkButtonProps) {
   const { emoji, text, path } = props;
 
   return (
-    <div className="container">
-      <Link to={path}>
+    <Link to={path}>
+      <div className="container">
         <Grid container spacing={0}>
           <Grid item xs={6}>
             <p
               style={{
                 textAlign: "center",
+                color: "black",
               }}
             >
               {text}
@@ -25,8 +26,8 @@ function LinkButton(props: LinkButtonProps) {
             <p>{emoji}</p>
           </Grid>
         </Grid>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 

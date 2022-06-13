@@ -21,9 +21,10 @@ function MediaCard(props: MediaCardType) {
       <Card>
         <CardMedia
           component="img"
-          height="140"
+          height="100%"
           image={props.img}
           alt="green iguana"
+          sx={{ backgroundColor: props.color }}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
