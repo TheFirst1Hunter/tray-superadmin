@@ -1,4 +1,4 @@
-export interface Restaurant {
+export interface MediaCard {
   title: string;
   img: string;
   description: string;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
-import MediaCard from "../../RestaurantMediaCard";
+import { MediaCard } from "../..";
 
 function Restaurants(props: any) {
   const { restaurants } = props;

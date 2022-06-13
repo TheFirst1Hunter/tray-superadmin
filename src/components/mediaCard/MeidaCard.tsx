@@ -1,11 +1,11 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { Restaurant } from "./types";
-import { modalState } from "../restaurantModal/atom";
+import { MediaCard as MediaCardType } from "./types";
+import { modalState } from "../pages/restaurantModal/atom";
 import { restaurantState } from "./atom";
 
-function RestaurantMediaCard(props: Restaurant) {
+function MediaCard(props: MediaCardType) {
   const [modalStateValue, setModalStateValue] =
     useRecoilState<boolean>(modalState);
 
@@ -38,4 +38,4 @@ function RestaurantMediaCard(props: Restaurant) {
   );
 }
 
-export default RestaurantMediaCard;
+export default MediaCard;

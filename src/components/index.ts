@@ -1,4 +1,6 @@
 import { NavBar } from "./navbar";
-import MediaCard from "./RestaurantMediaCard";
+import MediaCard from "./mediaCard";
+import { ErrorHandler } from "./error";
+import LinkButton from "./linkButton";
 
-export { NavBar, MediaCard };
+export { NavBar, MediaCard, ErrorHandler, LinkButton };

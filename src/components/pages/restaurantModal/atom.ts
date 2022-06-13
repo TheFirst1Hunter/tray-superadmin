@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 import { RecoilState } from "recoil";
-import { keys } from "../../utils/atoms";
+import { keys } from "../../../utils/atoms";
 
 export const modalState: RecoilState<boolean> = atom({
   key: keys.modal,

@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, Box } from "@mui/material";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { modalState } from "./atom";
-import { restaurantState } from "../RestaurantMediaCard/atom";
+import { restaurantState } from "../../mediaCard/atom";
 import "./style.css";
 
 function RestaurantModal() {
