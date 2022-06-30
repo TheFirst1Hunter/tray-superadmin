@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
-import { LinkButtonProps } from "./types";
+import { LinkButtonProps } from "../../types/LinkButton";
 import "./style.css";
 
 function LinkButton(props: LinkButtonProps) {
@@ -9,7 +9,7 @@ function LinkButton(props: LinkButtonProps) {
 
   return (
     <Link to={path}>
-      <div className="container">
+      <div className="link-button">
         <Grid container spacing={0}>
           <Grid item xs={6}>
             <p

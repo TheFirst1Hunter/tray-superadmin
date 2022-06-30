@@ -1,21 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { Box, Grid } from "@mui/material";
-import { useRecoilState } from "recoil";
+import { Box, Grid, CircularProgress, IconButton } from "@mui/material";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { getRestaurant } from "./helpers";
-import { Restaurant } from "./types";
+import { Restaurant } from "../../../types/Restaurant";
 import { MediaCard } from "../..";
-import { errorState } from "../../error/atom";
+import { errorState } from "../../../atoms";
+import {
+  restaurantState,
+  defaultRestaurant,
+  restaurantsArrayState,
+} from "../../../atoms/Restaurant";
+import { modalState } from "../../../atoms/Modal";
 
 function Restaurants() {
   const [error, setError] = useRecoilState<string>(errorState);
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  // const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const [restaurantData, setRestaurantData] = useRecoilState(restaurantState);
+  const [modalStateVisibility, setModalVisibility] =
+    useRecoilState<boolean>(modalState);
+  const [restaurants, setRestaurant] = useRecoilState(restaurantsArrayState);
 
   useEffect(() => {
     try {
       (async () => {
         const result = await getRestaurant();
 
-        setRestaurants(result.data);
+        setRestaurant(result.data);
       })();
     } catch (error: any) {
       setError(error.response.data.detail);
@@ -23,27 +33,47 @@ function Restaurants() {
   }, []);
 
   return (
-    <div
-      style={{
-        padding: "20px 20px 20px 20px",
-      }}
-    >
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
-          {restaurants.map((restaurant: Restaurant) => (
-            <Grid item xs={4}>
-              <MediaCard
-                key={restaurant.id}
-                img={restaurant.image}
-                description={restaurant.description.en}
-                title={restaurant.name}
-                color={restaurant.colors[0]}
-              />
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-    </div>
+    <>
+      <div style={{ position: "absolute", top: "45%", left: "45%" }}>
+        {restaurants.length === 0 && <CircularProgress />}
+      </div>
+
+      <div
+        style={{
+          padding: "20px 20px 20px 20px",
+        }}
+      >
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2}>
+            {restaurants.map((restaurant: Restaurant, index) => (
+              <Grid item xs={4}>
+                <MediaCard key={`${index}`} {...restaurant} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+
+        <IconButton
+          aria-label="delete"
+          size="large"
+          color="error"
+          sx={{
+            position: "fixed",
+            right: "6%",
+            bottom: "10%",
+            width: "60px",
+            border: "1px solid red",
+            backgroundColor: "white",
+          }}
+          onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+            setRestaurantData(defaultRestaurant);
+            setModalVisibility(true);
+          }}
+        >
+          +
+        </IconButton>
+      </div>
+    </>
   );
 }
 

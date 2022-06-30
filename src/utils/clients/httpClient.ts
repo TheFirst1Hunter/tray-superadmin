@@ -1,12 +1,12 @@
 import axios from "axios";
 import token from "../token";
-import { LoginResponse } from "../../components/pages/login/types";
+import { LoginResponse } from "../../types/Login";
 
 const { getAccessToken, setAccessToken, getRefreshToken, setRefreshToken } =
   token();
 
 export const httpClient = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
+  baseURL: import.meta.env.VITE_BASE_URL,
   headers: {
     authorization: `Bearer ${getAccessToken()}`,
   },
@@ -22,7 +22,6 @@ httpClient.interceptors.response.use(
         })
         .then((res) => {
           const result: LoginResponse = res.data;
-          console.log(res);
           setAccessToken(result.tokens.access);
           setRefreshToken(result.tokens.refresh);
         })
@@ -33,5 +32,6 @@ httpClient.interceptors.response.use(
 
       //
     }
+    return Promise.reject(error);
   }
 );

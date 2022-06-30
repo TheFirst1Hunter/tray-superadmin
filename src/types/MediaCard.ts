@@ -4,4 +4,5 @@ export interface MediaCard {
   description: string;
   key: string;
   color?: string;
+  id?: string;
 }

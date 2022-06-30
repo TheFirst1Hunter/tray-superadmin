@@ -3,8 +3,9 @@ import { TextField, Grid, Button } from "@mui/material";
 import { useRecoilState } from "recoil";
 import "./style.css";
 import { login } from "./helpers";
-import { errorState } from "../../error/atom";
+import { errorState } from "../../../atoms";
 import { token } from "../../../utils";
+import trayLogo from "../../../Tray-Logo.png";
 
 function Login() {
   const [phoneNumber, setPhoneNumber] = useState<string>("0");
@@ -37,7 +38,7 @@ function Login() {
       >
         <Grid item xs={3}>
           <img
-            src={require("../../../Tray-Logo.png")}
+            src={trayLogo}
             style={{ width: "15%", marginLeft: "42%" }}
             alt=""
           />
