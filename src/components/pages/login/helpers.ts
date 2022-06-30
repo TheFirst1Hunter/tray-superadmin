@@ -1,5 +1,5 @@
-import { httpClient } from "../../../utils";
-import { LoginResponse } from "../../../types";
+import { httpClient } from "@utils";
+import { LoginResponse } from "@types";
 
 export const login = async (
   phoneNumber: string,

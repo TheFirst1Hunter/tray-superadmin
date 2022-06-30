@@ -1,7 +1,7 @@
 import React from "react";
 import { Alert } from "@mui/material";
 import { useRecoilState } from "recoil";
-import { errorState } from "../../atoms";
+import { errorState } from "@atoms";
 
 function ErrorHandler() {
   const [error, setError] = useRecoilState<string>(errorState);

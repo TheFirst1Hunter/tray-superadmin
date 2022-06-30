@@ -1,9 +1,5 @@
-import { httpClient } from "../../../utils";
-import {
-  Restaurant,
-  RegisterRestaurant,
-  UpdateRestaurant,
-} from "../../../types";
+import { httpClient } from "@utils";
+import { Restaurant, RegisterRestaurant, UpdateRestaurant } from "@types";
 
 export const getRestaurant = async (): Promise<{
   success: boolean;

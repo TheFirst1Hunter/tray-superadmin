@@ -1,6 +1,6 @@
 import axios from "axios";
 import token from "../token";
-import { LoginResponse } from "../../types/Login";
+import { LoginResponse } from "@types";
 
 const { getAccessToken, setAccessToken, getRefreshToken, setRefreshToken } =
   token();

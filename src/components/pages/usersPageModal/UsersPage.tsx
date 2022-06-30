@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useRecoilState, useRecoilValue } from "recoil";
 import Restaurants from "../restaurants";
-import { modalState, restaurantState } from "../../../atoms";
+import { modalState, restaurantState } from "@atoms";
 import "./style.css";
 
 function UsersPage() {

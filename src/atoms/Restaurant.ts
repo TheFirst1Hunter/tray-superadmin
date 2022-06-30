@@ -1,6 +1,6 @@
 import { RecoilState, atom } from "recoil";
-import { Restaurant } from "../types/Restaurant";
-import { keys } from "../utils/atoms";
+import { Restaurant } from "@types";
+import { keys } from "@utils";
 
 export const defaultRestaurant: Restaurant = {
   id: "",

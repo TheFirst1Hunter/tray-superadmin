@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Modal, Box, TextField, Button } from "@mui/material";
 import { useRecoilState } from "recoil";
-import { modalState } from "../../../atoms";
+import {
+  modalState,
+  restaurantState,
+  restaurantsArrayState,
+  errorState,
+} from "@atoms";
 import {
   registerRestaurant,
   getRestaurant,
   updateRestaurant,
 } from "../restaurants/helpers";
-import {
-  restaurantState,
-  restaurantsArrayState,
-} from "../../../atoms/Restaurant";
-import { errorState } from "../../../atoms/error";
 import "./style.css";
 
 function RestaurantModal() {

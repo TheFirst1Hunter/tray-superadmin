@@ -3,8 +3,8 @@ import { TextField, Grid, Button } from "@mui/material";
 import { useRecoilState } from "recoil";
 import "./style.css";
 import { login } from "./helpers";
-import { errorState } from "../../../atoms";
-import { token } from "../../../utils";
+import { errorState } from "@atoms";
+import { token } from "@utils";
 import trayLogo from "../../../Tray-Logo.png";
 
 function Login() {

@@ -18,9 +18,13 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      // "@utils": ["./src/utils"],
+      "@utils": ["./utils"],
       "@components": ["./components"],
-      "@components/*": ["./components/*"]
+      "@components/*": ["./components/*"],
+      "@types": ["./types"],
+      "@types/*": ["./types/*"],
+      "@pages": ["./components/pages"],
+      "@atoms": ["./atoms"]
     }
   },
   "include": ["src"]

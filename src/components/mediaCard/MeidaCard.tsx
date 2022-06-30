@@ -1,10 +1,8 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { MediaCard as MediaCardType } from "../../types/MediaCard";
-import { modalState } from "../../atoms/Modal";
-import { restaurantState } from "../../atoms";
-import { Restaurant } from "../../types/Restaurant";
+import { MediaCard as MediaCardType, Restaurant } from "@types";
+import { restaurantState, modalState } from "@atoms";
 
 function MediaCard(props: Restaurant) {
   const [modalStateValue, setModalStateValue] =

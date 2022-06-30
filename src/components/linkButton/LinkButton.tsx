@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
-import { LinkButtonProps } from "../../types/LinkButton";
+import { LinkButtonProps } from "@types";
 import "./style.css";
 
 function LinkButton(props: LinkButtonProps) {

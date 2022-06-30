@@ -6,7 +6,7 @@ import { NavBar, ErrorHandler } from "@components";
 import Restaurants from "./components/pages/restaurants";
 import RestaurantModal from "./components/pages/restaurantModal/RestaurantModal";
 import Login from "./components/pages/login";
-import { theme, token } from "./utils";
+import { theme, token } from "@utils";
 import UsersPage from "./components/pages/usersPageModal/UsersPage";
 
 function App() {
@@ -31,9 +31,9 @@ function App() {
                         path="/"
                         element={
                           <>
-                            <UsersPage />
-                            {/* <RestaurantModal />
-                            <Restaurants /> */}
+                            {/* <UsersPage /> */}
+                            <RestaurantModal />
+                            <Restaurants />
                           </>
                         }
                       ></Route>
