@@ -1,6 +1,6 @@
 import { keys } from "./atoms";
 import { theme } from "./theme";
 import { httpClient } from "./clients/httpClient";
-import token from "./token";
+import token, { logout } from "./token";
 
-export { keys, theme, httpClient, token };
+export { keys, theme, httpClient, token, logout };

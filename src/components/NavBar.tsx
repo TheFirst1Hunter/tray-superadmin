@@ -1,12 +1,25 @@
 import React from "react";
 import { Grid } from "@mui/material";
-import { logout } from "./helpers";
-import "./NavBar.css";
-import LinkButton from "../linkButton";
+import { logout } from "@utils";
+import LinkButton from "./LinkButton";
+
+const container: React.CSSProperties = {
+  height: "100vh",
+  width: "15vw",
+  backgroundColor: "#ff0000",
+  overflow: "auto",
+  border: "1px",
+  borderStyle: "solid",
+  borderColor: "black",
+  borderRadius: "0px 30px 30px 0px",
+  zIndex: 1000,
+  padding: "10px",
+  position: "fixed",
+};
 
 function NavBar() {
   return (
-    <div className="nav-bar">
+    <div style={container}>
       <Grid
         container
         spacing={3}
@@ -30,7 +43,7 @@ function NavBar() {
               padding: "10px 10px 10px 10px",
             }}
           >
-            <LinkButton text="mail" path="instagram.com" emoji={"🤔"} />
+            <LinkButton text="admins" path="/admins" emoji={"🤔"} />
           </div>
         </Grid>
 

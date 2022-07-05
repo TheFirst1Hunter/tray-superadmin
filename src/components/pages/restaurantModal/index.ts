@@ -1,1 +1,0 @@
-import Restaurant from "./RestaurantModal";

@@ -38,6 +38,10 @@ export default defineConfig({
         find: "@atoms",
         replacement: path.resolve(__dirname, "./src/atoms"),
       },
+      {
+        find: "@API",
+        replacement: path.resolve(__dirname, "./src/API"),
+      },
     ],
   },
 });

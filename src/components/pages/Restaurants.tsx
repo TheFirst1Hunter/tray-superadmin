@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Box, Grid, CircularProgress, IconButton } from "@mui/material";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { getRestaurant } from "./helpers";
+import { getRestaurant } from "@API/restaurant";
 import { Restaurant } from "@types";
-import { MediaCard } from "../..";
+import { MediaCard } from "..";
 import {
   errorState,
   restaurantsArrayState,
   restaurantState,
   modalState,
 } from "@atoms";
-import { defaultRestaurant } from "../../../atoms/Restaurant";
+import { defaultRestaurant } from "../../atoms/Restaurant";
 
 function Restaurants() {
   const [error, setError] = useRecoilState<string>(errorState);

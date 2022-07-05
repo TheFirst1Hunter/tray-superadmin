@@ -1,5 +1,6 @@
-import Login from "./login";
-import Restaurants from "./restaurants";
-import RestaurantModal from "./restaurantModal/RestaurantModal";
+import Restaurants from "./Restaurants";
+import RestaurantModal from "./RestaurantModal";
+import UsersPage from "./UsersPage";
+import Login from "./Login";
 
-export { Login, Restaurants, RestaurantModal };
+export { Login, Restaurants, RestaurantModal, UsersPage };

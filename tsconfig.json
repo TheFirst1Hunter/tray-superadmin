@@ -24,7 +24,9 @@
       "@types": ["./types"],
       "@types/*": ["./types/*"],
       "@pages": ["./components/pages"],
-      "@atoms": ["./atoms"]
+      "@atoms": ["./atoms"],
+      "@API": ["./API"],
+      "@API/*": ["./API/*"]
     }
   },
   "include": ["src"]

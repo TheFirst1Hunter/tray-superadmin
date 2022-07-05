@@ -11,8 +11,22 @@ import {
   registerRestaurant,
   getRestaurant,
   updateRestaurant,
-} from "../restaurants/helpers";
-import "./style.css";
+} from "@API/restaurant";
+
+const container: React.CSSProperties = {
+  position: "absolute",
+  top: " 50%",
+  left: " 50%",
+  transform: " translate(-50%, -50%)",
+  width: "80vw",
+  backgroundColor: "white",
+  border: " 2px solid black",
+  borderRadius: "10px",
+  zIndex: 1000,
+  height: "60vh",
+  overflowY: "scroll",
+  padding: "20px",
+};
 
 function RestaurantModal() {
   const [username, setUsername] = useState<string>("");
@@ -105,7 +119,7 @@ function RestaurantModal() {
 
   return (
     <Modal open={modalVisibility} onClose={onClose}>
-      <Box className="modal">
+      <Box style={container}>
         <form onSubmit={handleSubmit} style={{ marginLeft: "%" }}>
           <TextField
             disabled={loading}

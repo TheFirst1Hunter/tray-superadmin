@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import { TextField, Grid, Button } from "@mui/material";
 import { useRecoilState } from "recoil";
-import "./style.css";
-import { login } from "./helpers";
+import { login } from "@API/login";
 import { errorState } from "@atoms";
 import { token } from "@utils";
-import trayLogo from "../../../Tray-Logo.png";
+import trayLogo from "../../TrayLogo-01.png";
 
-function Login() {
+const container: React.CSSProperties = {
+  position: "absolute",
+  top: "50%",
+  left: " 50%",
+  transform: "translate(-50%, -50%)",
+  width: "25%",
+  border: " 5px solid #ff0000",
+  borderRadius: " 25px",
+  padding: " 80px 20px 80px 20px",
+};
+
+export default function Login() {
   const [phoneNumber, setPhoneNumber] = useState<string>("0");
   const [password, setPassword] = useState<string>("0");
   const [error, setError] = useRecoilState<string>(errorState);
@@ -27,7 +37,7 @@ function Login() {
   };
 
   return (
-    <div className="login-container">
+    <div style={container}>
       <Grid
         container
         direction="column"
@@ -75,5 +85,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;

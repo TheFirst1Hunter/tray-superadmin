@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { RecoilRoot } from "recoil";
 import { Grid, Box, ThemeProvider } from "@mui/material";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { NavBar, ErrorHandler } from "@components";
-import Restaurants from "./components/pages/restaurants";
-import RestaurantModal from "./components/pages/restaurantModal/RestaurantModal";
-import Login from "./components/pages/login";
+import { Restaurants } from "./components/pages";
+import RestaurantModal from "./components/pages/RestaurantModal";
+import { Login } from "./components/pages";
 import { theme, token } from "@utils";
-import UsersPage from "./components/pages/usersPageModal/UsersPage";
+import { UsersPage } from "@components/pages";
 
 function App() {
   const { getAccessToken, getRefreshToken } = token();
@@ -31,12 +31,12 @@ function App() {
                         path="/"
                         element={
                           <>
-                            {/* <UsersPage /> */}
                             <RestaurantModal />
                             <Restaurants />
                           </>
                         }
                       ></Route>
+                      <Route path="/admins" element={<UsersPage />}></Route>
                     </Routes>
                   </Grid>
                 </Grid>
