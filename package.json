@@ -32,7 +32,7 @@
     "start": "vite",
     "build": "tsc && vite build",
     "test": "react-scripts test",
-    "serve": "vite preview",
+    "serve": "vite preview --host",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
