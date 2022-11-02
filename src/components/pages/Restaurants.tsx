@@ -46,8 +46,8 @@ function Restaurants() {
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2}>
             {restaurants.map((restaurant: Restaurant, index) => (
-              <Grid item xs={4}>
-                <MediaCard key={`${index}`} {...restaurant} />
+              <Grid key={restaurant.id} item xs={4}>
+                <MediaCard {...restaurant} />
               </Grid>
             ))}
           </Grid>

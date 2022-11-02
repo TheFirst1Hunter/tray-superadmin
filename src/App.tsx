@@ -7,7 +7,8 @@ import { Restaurants } from "./components/pages";
 import RestaurantModal from "./components/pages/RestaurantModal";
 import { Login } from "./components/pages";
 import { theme, token } from "@utils";
-import { UsersPage } from "@components/pages";
+import { UsersPage, AdminModal } from "@components/pages";
+import Form from "./components/forms/Admin-form";
 
 function App() {
   const { getAccessToken, getRefreshToken } = token();
@@ -31,12 +32,20 @@ function App() {
                         path="/"
                         element={
                           <>
+                            {/* <Form /> */}
                             <RestaurantModal />
                             <Restaurants />
                           </>
                         }
                       ></Route>
-                      <Route path="/admins" element={<UsersPage />}></Route>
+                      <Route
+                        path="/admins"
+                        element={
+                          <>
+                            <UsersPage /> <AdminModal />
+                          </>
+                        }
+                      ></Route>
                     </Routes>
                   </Grid>
                 </Grid>

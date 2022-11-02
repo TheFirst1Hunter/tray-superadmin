@@ -3,4 +3,7 @@ export enum keys {
   "restaurant" = "restaurant",
   "restaurants" = "restaurants",
   "error" = "error",
+  "user" = "user",
+  "userModal" = "userModal",
+  "AdminModal" = "AdminModal",
 }

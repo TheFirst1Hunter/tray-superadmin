@@ -18,7 +18,16 @@ export const defaultRestaurant: Restaurant = {
   groupName: "",
   image: "",
   name: "",
-  Users: [{ phoneNumber: "", password: "", active: true, username: "" }],
+  Users: [
+    {
+      phoneNumber: "",
+      password: "",
+      active: true,
+      username: "",
+      id: "",
+      restaurantId: "",
+    },
+  ],
 };
 
 export const restaurantState: RecoilState<Restaurant> = atom({
